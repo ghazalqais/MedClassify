@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتيجة التحليل الطبي - MedClassify</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="results-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="material-icons-round">medical_services</span>
+                    </div>
+                    <div class="logo-text">
+                        <h1>MedClassify</h1>
+                        <span>نظام التصنيف الطبي الذكي</span>
+                    </div>
+                </div>
+                <a href="/" class="btn-secondary">
+                    <span class="material-icons-round">home</span>
+                    العودة للرئيسية
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <!-- Page Title -->
+            <div class="page-header">
+                <div class="status-indicator">
+                    <span class="material-icons-round">check_circle</span>
+                </div>
+                <h1>تم تحليل استفسارك بنجاح</h1>
+                <p>إليك النتائج والتوصيات بناءً على التحليل المدرب على 90+ ألف حالة طبية</p>
+                <div style="margin-top: 1rem; display: inline-block; padding: 0.75rem 1.5rem; background: var(--primary-blue-50); border-radius: var(--radius-full); border: 1px solid var(--primary-blue-200);">
+                    <p style="color: var(--primary-blue-dark); font-weight: 600; font-size: 0.875rem; margin: 0;">
+                        التخصصات المتاحة: طب الأسنان • طب العيون • جراحة العظام • الطب النفسي • التغذية
+                    </p>
+                </div>
+            </div>
+
+            <!-- Query Display -->
+            <div class="result-card query-card">
+                <div class="card-header">
+                    <span class="material-icons-round">help_outline</span>
+                    <h2>الاستفسار المحلل</h2>
+                </div>
+                <div class="card-content">
+                    <div class="query-text">{{text}}</div>
+                </div>
+            </div>
+
+            <!-- Main Result -->
+            <div class="result-card main-result">
+                <div class="card-header">
+                    <span class="material-icons-round">medical_services</span>
+                    <h2>التخصص الطبي المناسب</h2>
+                </div>
+                <div class="card-content">
+                    <div class="main-prediction">
+                        <div class="specialty-info">
+                            <div class="specialty-icon" id="specialty-icon">
+                                <span class="material-icons-round">local_hospital</span>
+                            </div>
+                            <div class="specialty-details">
+                                <h3 class="specialty-name">{{specialty}}</h3>
+                                <div class="confidence-display">
+                                    <div class="confidence-label">مستوى الثقة</div>
+                                    <div class="confidence-bar">
+                                        <div class="confidence-fill" data-confidence="{{confidence*100}}"></div>
+                                    </div>
+                                    <div class="confidence-value">{{"%.1f"|format(confidence*100)}}%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {% if confidence >= 0.8 %}
+                        <div class="recommendation high-confidence">
+                            <span class="material-icons-round">thumb_up</span>
+                            <span>توصية قوية - مستوى ثقة عالي</span>
+                        </div>
+                        {% elif confidence >= 0.6 %}
+                        <div class="recommendation medium-confidence">
+                            <span class="material-icons-round">info</span>
+                            <span>توصية جيدة - يُنصح بالتأكد مع الطبيب</span>
+                        </div>
+                        {% else %}
+                        <div class="recommendation low-confidence">
+                            <span class="material-icons-round">warning</span>
+                            <span>يُنصح بالاستشارة الطبية الشاملة</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Probabilities -->
+            <div class="result-card probabilities-card">
+                <div class="card-header">
+                    <span class="material-icons-round">analytics</span>
+                    <h2>تحليل مفصل للاحتمالات</h2>
+                </div>
+                <div class="card-content">
+                    <div class="probabilities-list">
+                        {% for specialty, prob in probabilities %}
+                        <div class="probability-item">
+                            <div class="probability-info">
+                                <span class="specialty-name">{{specialty}}</span>
+                                <span class="probability-percentage">{{"%.1f"|format(prob*100)}}%</span>
+                            </div>
+                            <div class="probability-bar">
+                                <div class="probability-fill" data-value="{{prob*100}}"></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="result-card steps-card">
+                <div class="card-header">
+                    <span class="material-icons-round">assignment</span>
+                    <h2>الخطوات التالية</h2>
+                </div>
+                <div class="card-content">
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>حدد موعداً مع المختص</h4>
+                                <p>احجز موعداً مع طبيب في تخصص {{specialty}} لتقييم شامل لحالتك</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>جهز المعلومات الطبية</h4>
+                                <p>اجمع تاريخك المرضي والأدوية الحالية وأي تقارير طبية سابقة</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>اتبع تعليمات الطبيب</h4>
+                                <p>احرص على اتباع خطة العلاج والمتابعة حسب توجيهات الطبيب المختص</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <a href="/" class="btn-primary">
+                    <span class="material-icons-round">refresh</span>
+                    تحليل استفسار جديد
+                </a>
+                <button onclick="window.print()" class="btn-secondary">
+                    <span class="material-icons-round">print</span>
+                    طباعة النتائج
+                </button>
+                <button onclick="shareResults()" class="btn-secondary">
+                    <span class="material-icons-round">share</span>
+                    مشاركة النتائج
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer">
+                <div class="disclaimer-icon">
+                    <span class="material-icons-round">warning</span>
+                </div>
+                <div class="disclaimer-content">
+                    <h4>تنبيه طبي مهم</h4>
+                    <p>هذه النتائج استرشادية لخمسة تخصصات طبية محددة (طب الأسنان، طب العيون، جراحة العظام، الطب النفسي، والتغذية) وتعتمد على تحليل مدرب على 90+ ألف حالة طبية. لا تغني عن الاستشارة الطبية المتخصصة والفحص السريري.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="static/js/script.js"></script>
+    <script>
+        // Initialize results page
+        document.addEventListener('DOMContentLoaded', function() {
+            animateResults();
+            setupSpecialtyIcon();
+        });
+
+        function animateResults() {
+            // Animate confidence bar
+            const confidenceFill = document.querySelector('.confidence-fill');
+            if (confidenceFill) {
+                const confidence = confidenceFill.getAttribute('data-confidence');
+                setTimeout(() => {
+                    confidenceFill.style.width = confidence + '%';
+                }, 500);
+            }
+
+            // Animate probability bars
+            const probabilityFills = document.querySelectorAll('.probability-fill');
+            probabilityFills.forEach((fill, index) => {
+                const value = fill.getAttribute('data-value');
+                setTimeout(() => {
+                    fill.style.width = value + '%';
+                }, 800 + (index * 100));
+            });
+        }
+
+        function setupSpecialtyIcon() {
+            const specialtyName = document.querySelector('.specialty-name').textContent.toLowerCase();
+            const iconElement = document.querySelector('#specialty-icon .material-icons-round');
+            const iconContainer = document.querySelector('#specialty-icon');
+            
+            // Set appropriate icon based on specialty
+            if (specialtyName.includes('عيون')) {
+                iconElement.textContent = 'visibility';
+                iconContainer.className = 'specialty-icon eyes';
+            } else if (specialtyName.includes('أسنان')) {
+                iconElement.textContent = 'sentiment_satisfied';
+                iconContainer.className = 'specialty-icon dental';
+            } else if (specialtyName.includes('عظام') || specialtyName.includes('جراحة')) {
+                iconElement.textContent = 'accessibility_new';
+                iconContainer.className = 'specialty-icon orthopedic';
+            } else if (specialtyName.includes('قلب')) {
+                iconElement.textContent = 'favorite';
+                iconContainer.className = 'specialty-icon cardiology';
+            } else if (specialtyName.includes('نفس')) {
+                iconElement.textContent = 'psychology';
+                iconContainer.className = 'specialty-icon psychiatry';
+            } else if (specialtyName.includes('هضمي')) {
+                iconElement.textContent = 'sick';
+                iconContainer.className = 'specialty-icon gastro';
+            } else {
+                iconElement.textContent = 'local_hospital';
+                iconContainer.className = 'specialty-icon general';
+            }
+        }
+
+        function shareResults() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'نتيجة التحليل الطبي - MedClassify',
+                    text: 'تم تحليل الاستفسار الطبي وتحديد التخصص المناسب',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback - copy to clipboard
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('تم نسخ رابط النتائج');
+                });
+            }
+        }
+    </script>
+</body>
+</html>

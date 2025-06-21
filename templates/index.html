@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام التصنيف الطبي الذكي - MedClassify</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span class="material-icons-round">medical_services</span>
+                    </div>
+                    <div class="logo-text">
+                        <h1>MedClassify</h1>
+                        <span>نظام التصنيف الطبي الذكي</span>
+                    </div>
+                </div>
+                <div class="header-badge">
+                    <span class="material-icons-round">psychology</span>
+                    <span>مدرب على 90K+ حالة</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="material-icons-round">auto_awesome</span>
+                        <span>تقنيات التعلم المتقدمة</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">مش متأكد أي دكتور تراجع؟</span>
+                        <span class="title-line highlight">احنا رح نساعدك</span>
+                    </h1>
+                    <p class="hero-description">
+                        اكتب الأعراض اللي عندك واحنا رح نختارلك أنسب تخصص من التخصصات المتوفرة: طب الأسنان، طب العيون، جراحة العظام، الطب النفسي، والتغذية.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">دقة النتائج</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">90K+</div>
+                            <div class="stat-label">حالة تدريب</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">تخصص طبي</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">فوري</div>
+                            <div class="stat-label">النتيجة</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#analyzer" class="btn-hero-primary">
+                            <span class="material-icons-round">psychology</span>
+                            جرب هسا
+                        </a>
+                        <div class="hero-trust">
+                            <div class="trust-icons">
+                                <span class="material-icons-round">verified_user</span>
+                                <span class="material-icons-round">security</span>
+                                <span class="material-icons-round">medical_services</span>
+                            </div>
+                            <span>آمن ومجاني</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="medical-dashboard">
+                        <!-- Medical Brain Illustration -->
+                        <div class="ai-brain">
+                            <div class="brain-core">
+                                <div class="neural-network">
+                                    <div class="node node-1"></div>
+                                    <div class="node node-2"></div>
+                                    <div class="node node-3"></div>
+                                    <div class="node node-4"></div>
+                                    <div class="node node-5"></div>
+                                    <div class="connection conn-1"></div>
+                                    <div class="connection conn-2"></div>
+                                    <div class="connection conn-3"></div>
+                                    <div class="connection conn-4"></div>
+                                </div>
+                                <div class="brain-pulse"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Medical Cards -->
+                        <div class="floating-medical-cards">
+                            <div class="medical-card card-1">
+                                <div class="card-icon">
+                                    <span class="material-icons-round">sentiment_satisfied</span>
+                                </div>
+                                <div class="card-info">
+                                    <div class="card-title">طب الأسنان</div>
+                                    <div class="card-accuracy">95.2%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="medical-card card-2">
+                                <div class="card-icon">
+                                    <span class="material-icons-round">visibility</span>
+                                </div>
+                                <div class="card-info">
+                                    <div class="card-title">طب العيون</div>
+                                    <div class="card-accuracy">98.1%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="medical-card card-3">
+                                <div class="card-icon">
+                                    <span class="material-icons-round">psychology</span>
+                                </div>
+                                <div class="card-info">
+                                    <div class="card-title">الطب النفسي</div>
+                                    <div class="card-accuracy">92.8%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="medical-card card-4">
+                                <div class="card-icon">
+                                    <span class="material-icons-round">accessibility_new</span>
+                                </div>
+                                <div class="card-info">
+                                    <div class="card-title">جراحة العظام</div>
+                                    <div class="card-accuracy">96.7%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Analytics Visualization -->
+                        <div class="analytics-viz">
+                            <div class="data-flow">
+                                <div class="data-point dp-1"></div>
+                                <div class="data-point dp-2"></div>
+                                <div class="data-point dp-3"></div>
+                                <div class="data-point dp-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Form Section -->
+    <section class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="analyzer">اكتب الأعراض اللي عندك</h2>
+                <p>وصف بسيط للي بتحس فيه واحنا رح نساعدك تعرف أنسب دكتور تراجعه</p>
+                <div style="margin-top: 1rem; padding: 1rem; background: var(--primary-blue-50); border-radius: var(--radius-lg); border: 1px solid var(--primary-blue-100);">
+                    <p style="color: var(--primary-blue-dark); font-weight: 600; font-size: 0.9rem; margin: 0;">
+                        <span class="material-icons-round" style="font-size: 1rem; vertical-align: middle; margin-left: 0.5rem;">info</span>
+                        التخصصات المتوفرة: طب الأسنان • طب العيون • جراحة العظام والمفاصل • الطب النفسي • التغذية
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <form id="medical-form" action="/predict" method="post">
+                    <div class="input-group">
+                        <label for="medical-query">شو اللي بتحس فيه؟</label>
+                        <textarea 
+                            id="medical-query" 
+                            name="text" 
+                            placeholder="مثال: معدتي بتوجعني من أمس والوجع بيزيد بعد ما اكل اشي فيه زيت وعندي غثيان..."
+                            required
+                        ></textarea>
+                        <div class="input-hint">
+                            <span class="material-icons-round">lightbulb</span>
+                            كل ما تكتب تفاصيل أكثر، كل ما النتيجة تكون أدق
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            <span class="material-icons-round">search</span>
+                            شوف أنسب دكتور
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Examples Section -->
+            <div class="examples-section">
+                <h3>جرب أمثلة سريعة</h3>
+                <p class="examples-subtitle">اختار مثال من الحالات الشائعة</p>
+                
+                <div class="examples-container">
+                    <!-- Desktop Grid Layout -->
+                    <div class="examples-grid">
+                        <div class="example-card" data-specialty="طب اسنان" data-text="عندي ألم قوي في ضرسي من يومين، بيزيد لما أشرب شي بارد ووجهي منتفخ شوية">
+                            <div class="example-icon">
+                                <span class="material-icons-round">sentiment_satisfied</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>طب الأسنان</h4>
+                                <p>ألم الأسنان والتورم</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-specialty="طب عيون" data-text="نظري مش واضح لما أقرا، وعيني بتحرقني وراسي بيوجعني خاصة بعد ما أشتغل على الكمبيوتر فترة طويلة">
+                            <div class="example-icon">
+                                <span class="material-icons-round">visibility</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>طب العيون</h4>
+                                <p>مشاكل الرؤية والعين</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-specialty="جراحة العظام والمفاصل" data-text="ركبتي بتوجعني وفيها تورم خفيف، الألم بيزيد لما أطلع السلم وبيقل لما أرتاح">
+                            <div class="example-icon">
+                                <span class="material-icons-round">accessibility_new</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>جراحة العظام</h4>
+                                <p>آلام المفاصل والعظام</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-specialty="الطب النفسي" data-text="حاسس بقلق وتوتر كبير من شهرين، مش قادر أنام منيح ومش مهتم بالأشياء اللي كنت أحبها">
+                            <div class="example-icon">
+                                <span class="material-icons-round">psychology</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>الطب النفسي</h4>
+                                <p>القلق والتوتر النفسي</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-specialty="تغذية" data-text="معدتي بتوجعني كثير بعد ما آكل وعندي إسهال وغازات، خاصة بعد اللبن والأكل الدسم">
+                            <div class="example-icon">
+                                <span class="material-icons-round">restaurant</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>التغذية</h4>
+                                <p>مشاكل الهضم والتغذية</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Horizontal Scroll -->
+                    <div class="examples-scroll">
+                        <div class="example-card" data-specialty="طب اسنان" data-text="عندي ألم قوي في ضرسي من يومين، بيزيد لما أشرب شي بارد ووجهي منتفخ شوية">
+                            <div class="example-icon">
+                                <span class="material-icons-round">sentiment_satisfied</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>طب الأسنان</h4>
+                                <p>ألم الأسنان والتورم</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-specialty="طب عيون" data-text="نظري مش واضح لما أقرا، وعيني بتحرقني وراسي بيوجعني خاصة بعد ما أشتغل على الكمبيوتر فترة طويلة">
+                            <div class="example-icon">
+                                <span class="material-icons-round">visibility</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>طب العيون</h4>
+                                <p>مشاكل الرؤية والعين</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-specialty="جراحة العظام والمفاصل" data-text="ركبتي بتوجعني وفيها تورم خفيف، الألم بيزيد لما أطلع السلم وبيقل لما أرتاح">
+                            <div class="example-icon">
+                                <span class="material-icons-round">accessibility_new</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>جراحة العظام</h4>
+                                <p>آلام المفاصل والعظام</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-specialty="الطب النفسي" data-text="حاسس بقلق وتوتر كبير من شهرين، مش قادر أنام منيح ومش مهتم بالأشياء اللي كنت أحبها">
+                            <div class="example-icon">
+                                <span class="material-icons-round">psychology</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>الطب النفسي</h4>
+                                <p>القلق والتوتر النفسي</p>
+                            </div>
+                        </div>
+
+                        <div class="example-card" data-specialty="تغذية" data-text="معدتي بتوجعني كثير بعد ما آكل وعندي إسهال وغازات، خاصة بعد اللبن والأكل الدسم">
+                            <div class="example-icon">
+                                <span class="material-icons-round">restaurant</span>
+                            </div>
+                            <div class="example-content">
+                                <h4>التغذية</h4>
+                                <p>مشاكل الهضم والتغذية</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <span class="material-icons-round">swipe</span>
+                    <span>اسحب يمين لتشوف أكثر</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <!-- Desktop Grid Layout -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <span class="material-icons-round">psychology</span>
+                    </div>
+                    <h3>تدريب متقدم</h3>
+                    <p>مدرب على أكثر من 90 ألف حالة طبية باستخدام تقنيات التعلم العميق ونقل المعرفة الطبية المتخصصة</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <span class="material-icons-round">speed</span>
+                    </div>
+                    <h3>سريع ودقيق</h3>
+                    <p>نتيجة فورية ودقيقة خلال ثواني معدودة من غير انتظار</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <span class="material-icons-round">security</span>
+                    </div>
+                    <h3>معلوماتك آمنة</h3>
+                    <p>كل اللي رح تكتبه محمي واحنا ما بنحتفظ بأي معلومات شخصية</p>
+                </div>
+            </div>
+
+            <!-- Mobile Horizontal Scroll -->
+            <div class="info-scroll-container">
+                <div class="info-scroll">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <span class="material-icons-round">psychology</span>
+                        </div>
+                        <h3>ذكاء اصطناعي متطور</h3>
+                        <p>بنستخدم أحدث تقنيات الذكاء الاصطناعي عشان نفهم حالتك بدقة عالية</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <span class="material-icons-round">speed</span>
+                        </div>
+                        <h3>سريع ودقيق</h3>
+                        <p>نتيجة فورية ودقيقة خلال ثواني معدودة من غير انتظار</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <span class="material-icons-round">security</span>
+                        </div>
+                        <h3>معلوماتك آمنة</h3>
+                        <p>كل اللي رح تكتبه محمي واحنا ما بنحتفظ بأي معلومات شخصية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer">
+                <div class="disclaimer-icon">
+                    <span class="material-icons-round">info</span>
+                </div>
+                <div class="disclaimer-content">
+                    <h4>مهم تعرف</h4>
+                    <p>هذا النظام مساعد متخصص في خمسة تخصصات طبية فقط (طب الأسنان، طب العيون، جراحة العظام، الطب النفسي، والتغذية) وليس بديلاً عن الاستشارة الطبية المتخصصة. يجب مراجعة الطبيب المختص للتشخيص والعلاج الصحيح.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+            </div>
+            <h3>بنحلل الأعراض اللي كتبتها</h3>
+            <p>استنى شوية، الذكاء الاصطناعي بيشتغل...</p>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
