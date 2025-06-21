@@ -8,7 +8,7 @@ An intelligent Arabic medical AI web application that analyzes patient symptoms 
 
 - **90%+ accuracy** with fine-tuned MARBERT model
 - **90K+ medical consultations** used for training
-- **5 medical specialties** supported with bilingual interface
+- **5 medical specialties** supported with an interface
 - **Real-time classification** with native Arabic RTL support
 - **Production deployment** on Google Cloud Run
 
@@ -57,7 +57,6 @@ _Note: Model files are not included in this repository due to size constraints. 
 ## Features
 
 - **Real-time Arabic text classification** with instant results
-- **Bilingual interface** (Arabic/English) with native RTL support
 - **Smart example inputs** for quick testing across all specialties
 - **Mobile-responsive design** with touch-optimized interface
 - **Privacy-focused** (no data storage or personal information retention)
